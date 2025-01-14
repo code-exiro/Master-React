@@ -1,23 +1,39 @@
-//Manipulacion de objetos
+// Manipulación de objetos en JavaScript
+// Los objetos en JavaScript son dinámicos, lo que significa que puedes agregar, modificar o eliminar propiedades después de que se han creado.
+
 const producto = {
     nombre: "Tablet",
     precio: 3000,
     disponible: false
-}
+};
 
-/*Lo vuelve inmutable
-Object.freeze(producto)*/
+/*
+Object.freeze(producto)
+El método Object.freeze() impide que se puedan agregar, modificar o eliminar propiedades del objeto. Lo convierte en un objeto inmutable.
+*/
 
-/*Solo me permitiria modificar las propiedades existentes
-Object.seal(producto)*/
+// Ejemplo:
+Object.freeze(producto);
+// producto.disponible = true;  // Error: No se puede modificar una propiedad de un objeto congelado
 
-//Reescribir un valor 
-producto.disponible = true
+/*
+Object.seal(producto)
+El método Object.seal() permite modificar las propiedades existentes del objeto, pero impide agregar nuevas propiedades o eliminar las existentes.
+*/
 
-//Sino existe, lo va añadir
-producto.imagen = 'imagen.jpg'
+// Ejemplo:
+Object.seal(producto);
+// producto.imagen = 'imagen.jpg';  // No se permitirá agregar nuevas propiedades
+// producto.disponible = true;      // Sí se permite modificar las propiedades existentes
 
-//Eliminar propiedad
-delete producto.precio
+// Reescribir un valor existente
+producto.disponible = true;
 
-console.log(producto)
+// Agregar una nueva propiedad
+producto.imagen = 'imagen.jpg';
+
+// Eliminar una propiedad
+delete producto.precio;
+
+// Mostrar el objeto modificado en la consola
+console.log(producto);

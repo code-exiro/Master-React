@@ -1,5 +1,6 @@
-/*Objetos  
-Son entidades independientes que almacenan datos y entidades complejas, y se asocian con un nombre clave-valor (muy parecidos a los diccionarios en python)
+/*
+Objetos en JavaScript
+Los objetos son entidades independientes que almacenan datos y permiten representar información compleja mediante pares clave-valor. Son muy parecidos a los diccionarios en Python.
 
 Sintaxis:
 const objeto = {
@@ -8,46 +9,64 @@ const objeto = {
 };
 */
 
+// Declaración de un objeto llamado 'producto'
 const producto = {
     nombre: "Tablet",
     precio: 3000,
     disponible: false
-}
+};
 
-console.log(producto)
-console.table(producto) // 'console.table' muy util para objetos
-console.log(producto.nombre) // Tablet
-console.log('-----------------------------------')
+// Mostrar el objeto completo en la consola
+console.log(producto);
 
-/*Destructuring 
-es una forma rápida y elegante de extraer valores de objetos o arrays y asignarlos a variables*/
+// Mostrar el objeto en formato de tabla (muy útil para visualizar objetos grandes)
+console.table(producto);
 
-const { nombre, precio, marca } = producto //Si la variable no existe en el objeto, será undefined
+// Acceder a una propiedad específica del objeto utilizando la notación de punto
+console.log(producto.nombre);  // "Tablet"
 
-console.log(nombre)  // Tablet
-console.log(precio)  // 3000
-console.log(marca)  // undefined
+console.log('-----------------------------------');  // Separador visual
 
-//Forma antigua 
-const disponible = producto.disponible
-console.log(disponible) // false
+/*
+Destructuring
+El destructuring es una forma rápida y elegante de extraer valores de objetos o arrays y asignarlos a variables. Esto permite simplificar el acceso a los datos de un objeto.
+*/
 
-/*Object literal enhacement
-es una forma de simplificar la creación de objetos cuando tienes variables o funciones que quieres asignar como propiedades del objeto*/
+// Uso de destructuring para extraer valores del objeto 'producto'
+const { nombre, precio, marca } = producto;  // 'marca' no existe en el objeto, será undefined
 
-const autenticado = true
-const usuario = "Juan"
+// Mostrar los valores extraídos
+console.log(nombre);  // "Tablet"
+console.log(precio);  // 3000
+console.log(marca);   // undefined
 
+// Forma antigua de acceder a una propiedad
+const disponible = producto.disponible;
+console.log(disponible);  // false
+
+/*
+Object Literal Enhancement
+El Object Literal Enhancement es una técnica para simplificar la creación de objetos cuando tienes variables o funciones que deseas asignar como propiedades del objeto.
+*/
+
+// Declaración de variables
+const autenticado = true;
+const usuario = "Juan";
+
+// Creación de un objeto usando Object Literal Enhancement
 const nuevoObjeto = {
     autenticado,
     usuario
-    };
+};
 
-console.log(nuevoObjeto);  // Object { autenticado: true, usuario: "Juan" }
+// Mostrar el objeto creado
+console.log(nuevoObjeto);  // { autenticado: true, usuario: "Juan" }
 
-//Forma antigua
+// Forma antigua de crear el mismo objeto
 const nuevoObjetoAntiguo = {
     autenticado: autenticado,
     usuario: usuario
 };
 
+// Mostrar el objeto creado con la forma antigua
+console.log(nuevoObjetoAntiguo);  // { autenticado: true, usuario: "Juan" }
