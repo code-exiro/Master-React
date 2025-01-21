@@ -4,7 +4,7 @@
 -Cada componente debe tener un return
 -En este return debe haber maximo un solo elemento en el nivel maximo*/
 
-export function Header() {
+export default function Header() {
 
     return (
         <header className="py-5 header">
