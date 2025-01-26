@@ -9,21 +9,24 @@ function App() {
     const [cart , setCart] = useState([]) 
 
     function addToCart(item) {
-
         const itemExists = cart.findIndex(guitar => guitar.id === item.id)
         if(itemExists >= 0) { // Existe en el carrito
-            console.log('Ya existe...')
+            const updateCart = [...cart]
+            updateCart[itemExists].quantity++
+            setCart(updateCart)
         } else {
-            item.quantity =1 
-            setCart(prevCart => [...prevCart, item])
+            item.quantity = 1 
+            setCart([...cart, item])
         }
+    }
 
+    function removeFromCart(id) {
+        console.log('eliminando....', id)
     }
 
     return (
         <>
-
-        <Header />
+        <Header cart={cart} removeFromCart={removeFromCart}/>
 
         <main className='container-xl mt-5'>
             <h2 className='text-center'>Nuestra Coleccion</h2>
