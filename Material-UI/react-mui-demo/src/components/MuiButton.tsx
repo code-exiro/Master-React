@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { 
     Stack, 
     Button, 
@@ -14,6 +16,7 @@ import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
 
 
 export const MuiButton = () => {
+    const [formats, setFormats] = useState<string[]>([])
     return (
         <Stack spacing={4}>
 
