@@ -1,4 +1,8 @@
+import { menuItems } from "./data/db"
+
 function App() {
+
+  console.log(menuItems)
 
   return (
     <>
@@ -7,6 +11,19 @@ function App() {
           Calculadora de Consumo y Propinas
         </h1>
       </header>
+
+      <main className=" max-w-7xl mx-auto py-20 grid md:grid-cols-2">
+        <div>
+          <h2>menu</h2>
+
+        </div>
+
+        <div>
+          <h2>Consumo</h2>
+
+        </div>
+      </main>
+
     </>
   )
 }
